@@ -15,6 +15,7 @@ pbBuzzer::pbBuzzer(uint8_t pin)
 void pbBuzzer::Tone(uint16_t frequency, uint32_t duration)
 {
   int period = 1000000L / frequency;
+  period = period > 0 ? period : 3000L;
   int pulse = period / 2;
   for (long i = 0; i < duration * 1000L; i += period) 
   {

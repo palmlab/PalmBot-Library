@@ -11,7 +11,7 @@ static void SendData(CmdResponse * data)
     switch (data->type)
     {
         case FLOAT_DATATYPE:
-            Serial.write(data->type);
+            Serial.write((uint8_t)data->type);
             Serial.write(((uint8_t*)&data->_float)[0]);
             Serial.write(((uint8_t*)&data->_float)[1]);
             Serial.write(((uint8_t*)&data->_float)[2]);
@@ -35,22 +35,22 @@ bool CmdHandler::Handle(void)
                 case 0x01: //Get
                     if (OnGet != NULL && OnGet(&req->details, &resp ))
                     {
-                        Serial.write(0xff);
-                        Serial.write(0x55);
-                        Serial.write(0x00);
+                        Serial.write((uint8_t)0xff);
+                        Serial.write((uint8_t)0x55);
+                        Serial.write((uint8_t)0x00);
                         SendData(&resp);
-                        Serial.write(0x0d);
-                        Serial.write(0x0a);
+                        Serial.write((uint8_t)0x0d);
+                        Serial.write((uint8_t)0x0a);
                     }
                     break;
 
                 case 0x02: //RUN;
                     if (OnRun != NULL && OnRun(&req->details))
                     {
-                        Serial.write(0xff);
-                        Serial.write(0x55);
-                        Serial.write(0x0d);
-                        Serial.write(0x0a);
+                        Serial.write((uint8_t)0xff);
+                        Serial.write((uint8_t)0x55);
+                        Serial.write((uint8_t)0x0d);
+                        Serial.write((uint8_t)0x0a);
                     }
                     break;
 

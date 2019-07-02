@@ -6,7 +6,7 @@
 #include <CmdDevices.h>
 
 
-typedef struct
+typedef struct  __attribute__((packed))
 {
   uint8_t device;
   union

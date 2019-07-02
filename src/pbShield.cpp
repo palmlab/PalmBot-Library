@@ -97,16 +97,6 @@ void pbShield::PlayTone(uint16_t frequency, uint32_t duration)
 	Buzzer.Tone(frequency, duration);
 }
 
-void pbShield::TurnLED_ON()
-{
-    LED.On();
-}
-
-void pbShield::TurnLED_OFF()
-{
-    LED.Off();
-}
-
 void pbShield::TurnLED(uint8_t on_off)
 {
 	if(on_off)

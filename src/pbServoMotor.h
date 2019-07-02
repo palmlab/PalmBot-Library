@@ -3,7 +3,7 @@
 
 #include <pbDatatypes.h>
 #include <pbSensor.h>
-#include "extra\Servo.h"
+#include "util\servo\Servo.h"
 
 
 class pbServoMotor
