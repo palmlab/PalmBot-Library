@@ -7,6 +7,7 @@
 #include <pbLED.h>
 #include <pbButton.h>
 #include <pbLightSensor.h>
+#include <pbLineFollower.h>
 
 class pbShield
 {
